@@ -2,6 +2,39 @@ import styled, { keyframes } from "styled-components";
 import { PageHeader, PageHeaderStyled } from "../../components/ui";
 import { blue, pink, typeScale } from "../../utils";
 
+// Keyframes for animations
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const shine = keyframes`
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+`;
+
+const textShadow = keyframes`
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+`;
+
 export const HomeWrapper = styled.main`
   display: grid;
   height: 100vh;
@@ -45,11 +78,15 @@ export const Name = styled.h1`
   font-size: ${typeScale.bigDisplay};
   font-weight: bolder;
   margin: 0;
-  background: white;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, #ddd 100%);
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  background-size: 200% 200%;  
   line-height: 1;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+   animation: ${shine} 3s infinite alternate, ${textShadow} 1.5s infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
   @media screen and (max-width: 1204px) {
     font-size: ${typeScale.display};
   }
@@ -81,6 +118,20 @@ const textRotate2 = keyframes`
 }
 40%{
   transform: translate3d(0, 100%, 0) rotateX(-90deg);
+}
+60%{
+  transform: translate3d(0, 0%, 0) rotateX(0deg);
+}
+100%{
+  transform: translate3d(0, 0%, 0) rotateX(0deg);
+}
+`;
+const textRotate3 = keyframes`
+0%{
+  transform: translate3d(0, 100%, 0) rotateX(-90deg)
+}
+40%{
+  transform: translate3d(0, 100%, 0) rotateX(-90deg)
 }
 60%{
   transform: translate3d(0, 0%, 0) rotateX(0deg);

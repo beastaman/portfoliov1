@@ -5,6 +5,7 @@ import { Contact } from "./pages/Contact";
 import { Experience } from "./pages/Experience";
 import { Home } from "./pages/home";
 import { Projects } from "./pages/Projects";
+import { BuyMeCoffee } from "./pages/helpers/buymeCoffee";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <About />
         <Contact />
       </Navbar>
+      <BuyMeCoffee />
+
     </div>
   );
 }
